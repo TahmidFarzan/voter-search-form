@@ -1,0 +1,119 @@
+:root {
+    --white-color: #ffffff;
+    --black-color:#000000;
+}
+
+body {
+    padding-top: 4.5rem;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    font-family: "Nunito", sans-serif;
+}
+
+
+.main-container{
+    min-height: 65vh;
+}
+
+.back-to-top {
+    opacity: 0;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    z-index: 996;
+    position: fixed;
+    visibility: hidden;
+    border-radius: 50px;
+    background: #49cbbb;
+    transition-duration: 0.7s;
+    border: 1px solid #49cbbb;
+    box-shadow:0 0 0 #49cbbb inset;
+    transition-timing-function: linear;
+}
+
+.back-to-top i {
+    line-height: 0;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.back-to-top:hover {
+    color: #ffffff;
+    border: 1px solid #34b7a7;
+    box-shadow: -40px 0 0 #34b7a7 inset;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#preloader {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    position: fixed;
+    overflow: hidden;
+    background: #fff;
+    height: auto;
+}
+
+#preloader .ring {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+    top: calc(40% - 30px);
+    left: calc(45% - 30px);
+    border: 0px solid #000;
+}
+
+#preloader .ring:nth-child(1) {
+    border-bottom-width: 9px;
+    border-color: rgb(255, 0, 255);
+    animation: animate-preloader-1 3s linear infinite;
+}
+
+#preloader .ring:nth-child(2) {
+    border-right-width: 9px;
+    border-color: rgb(0, 255, 255);
+    animation: animate-preloader-2 3s linear infinite;
+}
+
+#preloader .ring:nth-child(3) {
+    border-top-width: 9px;
+    border-color: rgb(0, 255, 0);
+    animation: animate-preloader-3 3s linear infinite;
+}
+
+@keyframes animate-preloader-1 {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes animate-preloader-2 {
+    0%{
+        transform: rotateX(50deg) rotateY(-10deg) rotateZ(0deg);
+    }
+    100%{
+        transform: rotateX(50deg) rotateY(-10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes animate-preloader-3 {
+    0%{
+        transform: rotateX(37deg) rotateY(-55deg) rotateZ(0deg);
+    }
+    100%{
+        transform: rotateX(37deg) rotateY(-55deg) rotateZ(360deg);
+    }
+}
