@@ -65,6 +65,16 @@
                         </div>
                     @endif
 
+                    @if ( !$voterInfo )
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class=" d-flex justify-content-center text-warning">
+                                    <p>এই ভোটার নম্বর ব্যবহার করে কোনো ভোটার খুঁজে পাওয়া যায়নি।</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -83,7 +93,13 @@
     <script>
         $(document).ready(function () {
             $(document).on('click', ".page-dynamic-section #searchVoterButton", function () {
-                dataTableLoad(parameterGenerate());
+                var search = $(".page-dynamic-section #searchInput").val();
+                if(search.length > 0){
+                    dataTableLoad(parameterGenerate());
+                }
+                if(search.length == 0){
+                    extraErrorMessage("ভোটার নম্বর লিখুন|")
+                }
             });
         });
 

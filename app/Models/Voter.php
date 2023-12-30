@@ -10,7 +10,6 @@ class Voter extends Model
     use HasFactory;
 
     protected $table = 'voters';
-    protected $primaryKey = 'id';
 
     protected $fillable = [
         'no',
