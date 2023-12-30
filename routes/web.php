@@ -17,6 +17,10 @@ Route::prefix('import')->name('import.')->group(function(){
     Route::get('csv', [ImportController::class, 'import'])->name('import');
 });
 
+Route::prefix('search')->name('search.')->group(function(){
+    Route::get('voter', [PageController::class, 'searchVoters'])->name('voter');
+});
+
 Auth::routes(['login' => false,'register' => false,'verify' => false]);
 Route::prefix('site')->name('site.')->group(function(){
 
