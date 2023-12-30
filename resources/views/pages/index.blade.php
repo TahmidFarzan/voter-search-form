@@ -8,14 +8,19 @@
 
             <div clsas="card">
                 <div class="card-body mb-2">
-
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-sm" id="searchInput" name="search" placeholder="অনুসন্ধান: নাম/ভোটার নং">
+                        <button type="button" class="btn btn-sm btn-success" id="searchVoterButton">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="card-body @if($voters->count() == 0) d-none @endif" id="voterDataGrid">
                     <div class="row @if($voters->hasPages()) mb-2 @endif">
                         @foreach ($voters as $voterIndex => $voter)
                             <div class="col-md-4 mb-2">
-                                <div class="card" >
+                                <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $voter->name }}</h5>
                                         <h6 class="card-subtitle mb-2 text-body-secondary">{{ $voter->no }}</h6>
@@ -75,6 +80,14 @@
     </div>
 @endsection
 
+@push("onPageCSS")
+    <style>
+        .page-dynamic-section .container #voterDataGrid .card{
+            min-height: 200px;
+        }
+    </style>
+@endpush
+
 @push("onPageJS")
     <script>
         $(document).ready(function () {
@@ -121,7 +134,7 @@
                     $(".page-dynamic-section .container .extra-erorr-message").html("");
 
                     $(".page-dynamic-section .container #voterDataGrid").removeClass('d-none');
-                    $(".page-dynamic-section .container #voterDataGrid").html($(result).find(".page-dynamic-section #voterDataGrid").html());
+                    $(".page-dynamic-section .container #voterDataGrid").html($(result).find(".page-dynamic-section .container #voterDataGrid").html());
                 },
                 error: function(errorResponse) {
                     extraErrorMessage(["Error " + errorResponse.status,errorResponse.statusText]);
