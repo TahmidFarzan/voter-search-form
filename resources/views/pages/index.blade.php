@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="card-body @if($voters->count() == 0) d-none @endif" id="voterDataGrid">
-                    <div class="row">
+                    <div class="row @if($voters->hasPages()) mb-2 @endif">
                         @foreach ($voters as $voterIndex => $voter)
                             <div class="col-md-4 mb-2">
                                 <div class="card" >
@@ -57,6 +57,18 @@
                             </div>
                         @endforeach
                     </div>
+
+                    @if ($voters->hasPages())
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-1">
+                                    <div class="datatable-pagination">
+                                        {{ $voters->links() }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -66,14 +78,20 @@
 @push("onPageJS")
     <script>
         $(document).ready(function () {
-            $(document).on('click', ".datatable-pagination .pagination .page-item a", function () {
+            $(document).on('click', ".page-dynamic-section .datatable-pagination .pagination .page-item a", function () {
                 event.preventDefault();
                 parameterString = parameterGenerate();
+
                 var paginationiteUrl = $(this).attr('href');
                 var paginationUrlArray = paginationiteUrl.split("?");
 
-                var paginationParameter = (parameterString == null) ? paginationUrlArray[1] : parameterString + "&" + paginationUrlArray[1];
+                var paginationParameter = parameterString ? parameterString + "&" + paginationUrlArray[1] : paginationUrlArray[1] ;
 
+                dataTableLoad(paginationParameter);
+            });
+
+            $(document).on('click', ".page-dynamic-section #searchVoterButton", function () {
+                parameterString = parameterGenerate();
                 dataTableLoad(paginationParameter);
             });
 
