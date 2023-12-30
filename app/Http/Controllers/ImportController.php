@@ -24,7 +24,15 @@ class ImportController extends Controller
             Voter::truncate();
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-            $csvFilePath = asset('upload/voter-list.csv');
+            // $csvFilePath = asset('upload/voter-list.csv');
+            // Excel::import(new VoterListImport, $csvFilePath);
+
+            $files = glob(public_path('upload/voter-list-*.csv'));
+            foreach ($files as $file) {
+                Excel::import(new VoterListImport, $file);
+            }
+
+
             // $csvFile = fopen($csvFilePath, 'r');
             // $header = fgetcsv($csvFile);
 
@@ -50,7 +58,7 @@ class ImportController extends Controller
 
             // fclose($csvFile);
 
-            Excel::import(new VoterListImport, $csvFilePath);
+
 
             DB::commit();
             return redirect()->route('home')->with('status', 'Voter successfully save.');
