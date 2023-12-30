@@ -11,17 +11,17 @@ class VoterListImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Voter([
-            'updated_at' = null,
-            'created_at' = now(),
-            'no' = $row['Voter No.'],
-            'name' = $row['Name'],
-            'upazilla' = $row['Upazilla'],
-            'union' = $row['Union'],
-            'father_name' = $row["Father's Name"],
-            'mother_name' = $row["Mother's Name"],
-            'date_of_birth' = $row["Date of Birth"],
-            'profession' = $row["Profession"],
-            'address' = $row["Address"],
+            'updated_at' => null,
+            'created_at' => now(),
+            'no' => $row['voter_no'],
+            'name' => $row['name'],
+            'upazilla' => $row['upazilla'],
+            'union' => $row['union'],
+            'father_name' => $row["fathers_name"],
+            'mother_name' => $row["mothers_name"],
+            'date_of_birth' => $row["date_of_birth"],
+            'profession' => $row["profession"],
+            'address' => $row["address"],
         ]);
     }
 }

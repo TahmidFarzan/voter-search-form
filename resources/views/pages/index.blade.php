@@ -4,62 +4,67 @@
     <div class="page-dynamic-section">
         <div class="container">
 
+            @include("utility.status messages")
+
             <div class="extra-erorr-message d-none"></div>
 
             <div clsas="card">
                 <div class="card-body mb-2">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control form-control-sm" id="searchInput" name="search" placeholder="অনুসন্ধান: নাম/ভোটার নং">
+                        <input type="text" class="form-control form-control-sm" id="searchInput" name="search" placeholder="অনুসন্ধান: ভোটার নং">
                         <button type="button" class="btn btn-sm btn-success" id="searchVoterButton">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="card-body @if(! ($voterInfo)) d-none @endif" id="voterDataGrid">
-                    <div class="row ">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $voterInfo->name }}</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ $voterInfo->no }}</h6>
-                                    <ul class="list-group list-group-flush">
-                                        @if ($voterInfo->date_of_birth)
-                                            <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voterInfo->date_of_birth }}</li>
-                                        @endif
+                <div class="card-body @if(! ( $voterInfo) ) d-none @endif" id="voterDataGrid">
+                    @if ($voterInfo)
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $voterInfo->name }}</h5>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ $voterInfo->no }}</h6>
+                                        <ul class="list-group list-group-flush">
+                                            @if ($voterInfo->date_of_birth)
+                                                <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voterInfo->date_of_birth }}</li>
+                                            @endif
 
-                                        @if ($voterInfo->gender)
-                                            <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voterInfo->gender }}</li>
-                                        @endif
+                                            @if ($voterInfo->gender)
+                                                <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voterInfo->gender }}</li>
+                                            @endif
 
-                                        @if ($voterInfo->father_name)
-                                            <li class="list-group-item"><b>পিতার নাম :</b> {{  $voterInfo->father_name }}</li>
-                                        @endif
+                                            @if ($voterInfo->father_name)
+                                                <li class="list-group-item"><b>পিতার নাম :</b> {{  $voterInfo->father_name }}</li>
+                                            @endif
 
-                                        @if ($voterInfo->mother_name)
-                                            <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voterInfo->mother_name }}</li>
-                                        @endif
+                                            @if ($voterInfo->mother_name)
+                                                <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voterInfo->mother_name }}</li>
+                                            @endif
 
-                                        @if ($voterInfo->upazilla)
-                                            <li class="list-group-item"><b>উপজেলা :</b> {{  $voterInfo->upazilla }}</li>
-                                        @endif
+                                            @if ($voterInfo->upazilla)
+                                                <li class="list-group-item"><b>উপজেলা :</b> {{  $voterInfo->upazilla }}</li>
+                                            @endif
 
-                                        @if ($voterInfo->union)
-                                            <li class="list-group-item"><b>ইউনিয়ন :</b> {{ $voterInfo->union }}</li>
-                                        @endif
+                                            @if ($voterInfo->union)
+                                                <li class="list-group-item"><b>ইউনিয়ন :</b> {{ $voterInfo->union }}</li>
+                                            @endif
 
-                                        @if ($voterInfo->profession)
-                                            <li class="list-group-item"><b>পেশা :</b> {{ $voterInfo->profession }}</li>
-                                        @endif
+                                            @if ($voterInfo->profession)
+                                                <li class="list-group-item"><b>পেশা :</b> {{ $voterInfo->profession }}</li>
+                                            @endif
 
-                                        @if ($voterInfo->address)
-                                            <li class="list-group-item"><b>ঠিকানা :</b> {{ $voterInfo->address }}</li>
-                                        @endif
-                                    </ul>
+                                            @if ($voterInfo->address)
+                                                <li class="list-group-item"><b>ঠিকানা :</b> {{ $voterInfo->address }}</li>
+                                            @endif
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -78,10 +83,8 @@
     <script>
         $(document).ready(function () {
             $(document).on('click', ".page-dynamic-section #searchVoterButton", function () {
-                parameterString = parameterGenerate();
-                dataTableLoad(paginationParameter);
+                dataTableLoad(parameterGenerate());
             });
-
         });
 
         function parameterGenerate(){
