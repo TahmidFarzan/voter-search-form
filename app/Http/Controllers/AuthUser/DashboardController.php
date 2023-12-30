@@ -15,19 +15,15 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
-        $pagination = 25;
-        $voters = collect();
+        $voterInfo = collect();
 
         if( count($request->input())  > 0){
-            $voters = Voter::orderBy('name','asc');
+            $voterInfo = Voter::orderBy('name','asc');
             if($request->has("search") && !($request->search == null)){
-                $voters =  $voters->orWhere("name",'like', '%'.$request->search.'%')
-                                    ->orWhere("no", $request->search);
+                $voterInfo =  $voterInfo->where("no", $request->search)->first();
             }
-
-            $voters = $voters->paginate($pagination);
         }
 
-        return view('pages.index',compact('voters'));
+        return view('pages.index',compact('voterInfo'));
     }
 }

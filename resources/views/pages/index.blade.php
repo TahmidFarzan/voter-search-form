@@ -16,64 +16,50 @@
                     </div>
                 </div>
 
-                <div class="card-body @if($voters->count() == 0) d-none @endif" id="voterDataGrid">
-                    <div class="row @if($voters->hasPages()) mb-2 @endif">
-                        @foreach ($voters as $voterIndex => $voter)
-                            <div class="col-md-4 mb-2">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $voter->name }}</h5>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ $voter->no }}</h6>
-                                        <ul class="list-group list-group-flush">
-                                            @if ($voter->date_of_birth)
-                                                <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voter->date_of_birth }}</li>
-                                            @endif
+                <div class="card-body @if(! ($voterInfo)) d-none @endif" id="voterDataGrid">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $voterInfo->name }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ $voterInfo->no }}</h6>
+                                    <ul class="list-group list-group-flush">
+                                        @if ($voterInfo->date_of_birth)
+                                            <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voterInfo->date_of_birth }}</li>
+                                        @endif
 
-                                            @if ($voter->gender)
-                                                <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voter->gender }}</li>
-                                            @endif
+                                        @if ($voterInfo->gender)
+                                            <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voterInfo->gender }}</li>
+                                        @endif
 
-                                            @if ($voter->father_name)
-                                                <li class="list-group-item"><b>পিতার নাম :</b> {{  $voter->father_name }}</li>
-                                            @endif
+                                        @if ($voterInfo->father_name)
+                                            <li class="list-group-item"><b>পিতার নাম :</b> {{  $voterInfo->father_name }}</li>
+                                        @endif
 
-                                            @if ($voter->mother_name)
-                                                <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voter->mother_name }}</li>
-                                            @endif
+                                        @if ($voterInfo->mother_name)
+                                            <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voterInfo->mother_name }}</li>
+                                        @endif
 
-                                            @if ($voter->upazilla)
-                                                <li class="list-group-item"><b>উপজেলা :</b> {{  $voter->upazilla }}</li>
-                                            @endif
+                                        @if ($voterInfo->upazilla)
+                                            <li class="list-group-item"><b>উপজেলা :</b> {{  $voterInfo->upazilla }}</li>
+                                        @endif
 
-                                            @if ($voter->union)
-                                                <li class="list-group-item"><b>ইউনিয়ন :</b> {{ $voter->union }}</li>
-                                            @endif
+                                        @if ($voterInfo->union)
+                                            <li class="list-group-item"><b>ইউনিয়ন :</b> {{ $voterInfo->union }}</li>
+                                        @endif
 
-                                            @if ($voter->profession)
-                                                <li class="list-group-item"><b>পেশা :</b> {{ $voter->profession }}</li>
-                                            @endif
+                                        @if ($voterInfo->profession)
+                                            <li class="list-group-item"><b>পেশা :</b> {{ $voterInfo->profession }}</li>
+                                        @endif
 
-                                            @if ($voter->address)
-                                                <li class="list-group-item"><b>ঠিকানা :</b> {{ $voter->address }}</li>
-                                            @endif
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                    @if ($voters->hasPages())
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-1">
-                                    <div class="datatable-pagination">
-                                        {{ $voters->links() }}
-                                    </div>
+                                        @if ($voterInfo->address)
+                                            <li class="list-group-item"><b>ঠিকানা :</b> {{ $voterInfo->address }}</li>
+                                        @endif
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,18 +77,6 @@
 @push("onPageJS")
     <script>
         $(document).ready(function () {
-            $(document).on('click', ".page-dynamic-section .datatable-pagination .pagination .page-item a", function () {
-                event.preventDefault();
-                parameterString = parameterGenerate();
-
-                var paginationiteUrl = $(this).attr('href');
-                var paginationUrlArray = paginationiteUrl.split("?");
-
-                var paginationParameter = parameterString ? parameterString + "&" + paginationUrlArray[1] : paginationUrlArray[1] ;
-
-                dataTableLoad(paginationParameter);
-            });
-
             $(document).on('click', ".page-dynamic-section #searchVoterButton", function () {
                 parameterString = parameterGenerate();
                 dataTableLoad(paginationParameter);
