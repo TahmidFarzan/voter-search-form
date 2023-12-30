@@ -44,6 +44,7 @@ class ImportController extends Controller
             //     $voter->date_of_birth = $rowData["Date of Birth"];
             //     $voter->profession = $rowData["Profession"];
             //     $voter->address = $rowData["Address"];
+            //     $voter->gender = $rowData["gender"];
             //     $voter->save();
             // }
 

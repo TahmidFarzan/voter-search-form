@@ -21,6 +21,7 @@ class Voter extends Model
         'date_of_birth',
         'profession',
         'address',
+        'gender',
     ];
 
     protected $hidden = [];

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('date_of_birth')->nullable()->default(null);
             $table->string('profession',255)->nullable()->default(null);
             $table->text('address')->nullable()->default(null);
+            $table->text('gender')->nullable()->default(null);
             $table->timestamps();
         });
     }
