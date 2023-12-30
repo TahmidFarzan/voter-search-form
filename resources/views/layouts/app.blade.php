@@ -6,11 +6,18 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
+    <title>মাগুরা-১ আসনের ভোটার তথ্য অনুসন্ধান</title>
+
+    <link href="{{ asset("upload/site-info/favicon.png") }}" rel="icon">
+    <link href="{{ asset("upload/site-info/apple-touch-icon.png") }}" rel="apple-touch-icon">
 
     <link href="{{ asset("fonts/nunito.css") }}" rel="stylesheet">
     <link href="{{ asset("vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
-    <link href="{{ asset("assets/css/layout.css") }}" rel="stylesheet">
+
+    <link href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset("vendor/swiper/swiper-bundle.min.css") }}" rel="stylesheet">
+    <link href="{{ asset("vendor/aos/aos.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/main.css") }}" rel="stylesheet">
     @stack('onPageCSS')
 
     <link href="{{ asset("vendor/font-awesome/css/all.min.css") }}" rel="stylesheet">
@@ -21,22 +28,20 @@
 
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#manNavBar" aria-controls="manNavBar" aria-expanded="false" aria-label="Main nav bar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div id="app" class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
 
-                <div class="collapse navbar-collapse" id="manNavBar">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link {{ ( (Request::is('home') || Request::is('home/*')) ) ? "active" : null }}" aria-current="page" href="{{ route('home') }}">Home</a>
-                        </li>
-                    </ul>
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
 
-                    <ul class="navbar-nav ms-auto">
+                <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto me-xl-0">
+                    <h1>
+                        <img src="{{ asset("upload/hero-bg.jpg") }}" class="img-fluid" alt="">
+                    </h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="{{ route('home').'#hero' }}" class="active">হোম</a></li>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -71,9 +76,11 @@
                             </li>
                         @endauth
                     </ul>
-                </div>
+
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
             </div>
-        </nav>
+        </header>
 
         @auth()
             <div class="modal fade" id="logOutConfirmationModal" tabindex="-1" aria-labelledby="logOutConfirmationModalLabel" aria-hidden="true">
@@ -100,60 +107,40 @@
             </div>
         @endauth
 
-        <main class="main-container">
+        <main id="main" class="main-container">
             @hasSection('content')
                 @yield('content')
             @endif
         </main>
 
-        <footer class="footer">
-            <div class="container">
-                <div class="border-top my-3"></div>
-                <div class="row p-3">
-                    <div class="col-md-10 mb-2">
-                        <div class="message">
-                            <div class="text-muted p-2">
-                                Copy@ {{ env('APP_NAME') }}
-                            </div>
-                        </div>
-                    </div>
+        <footer id="footer" class="footer">
 
-                    <div class="col-md-2 mb-2 privacy-policy">
-                        <div class="text-muted p-2">
-                            <a href="">Privacy policy</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="credits">
-                            <div class="text-muted p-2">
-                                <div class=" d-flex justify-content-center">
-                                    <p>
-                                        {{ __('Develop and Design by') }} <span>{{ __('Seikh Md Tahmid Farzan') }}</span>
-                                        <a href="https://www.facebook.com/tahmid.farzan007/" class="text-decoration-none"><i class="fa-brands fa-facebook"></i></a>
-                                        <a href="https://www.linkedin.com/in/sk-md-tahmid-farzan/" class="text-decoration-none"><i class="fa-brands fa-linkedin"></i></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="container copyright text-center mt-4">
+                <p>&copy; <span>Copyright</span> <strong class="px-1">Magura-1</strong> <span>All Rights Reserved</span></p>
+                <div class="credits">
+                    Designed by <a href="https://www.live2web.studio/">LIVE2WEB</a>
                 </div>
             </div>
+
         </footer>
 
         <div id="preloader">
-            <div class="container">
-                <div class="ring"></div>
-                <div class="ring"></div>
-                <div class="ring"></div>
-            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
         @stack('onPageHTML')
-
-        <button id="backToTop" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></button>
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
 
-    <script src="{{ asset("assets/js/layout.js") }}"></script>
+    <script src="{{ asset("vendor/glightbox/js/glightbox.min.js") }}"></script>
+    <script src="{{ asset("vendor/isotope-layout/isotope.pkgd.min.js") }}"></script>
+    <script src="{{ asset("vendor/swiper/swiper-bundle.min.js") }}"></script>
+    <script src="{{ asset("vendor/aos/aos.js") }}"></script>
+
+    <script src="{{ asset("assets/js/main.js") }}"></script>
+
 </body>
 </html>
