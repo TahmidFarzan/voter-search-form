@@ -12,7 +12,12 @@
     <link href="{{ asset("upload/site-info/apple-touch-icon.png") }}" rel="apple-touch-icon">
 
     <link href="{{ asset("fonts/nunito.css") }}" rel="stylesheet">
+	<link href="{{ asset("fonts/solaimanlipi.css") }}" rel="stylesheet">
+	
     <link href="{{ asset("vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+	
+	<link href="{{ asset("vendor/font-awesome/css/all.min.css") }}" rel="stylesheet">
+	<link href="{{ asset("vendor/bootstrap-icons/bootstrap-icons.css") }}" rel="stylesheet">
 
     <link href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset("vendor/swiper/swiper-bundle.min.css") }}" rel="stylesheet">
@@ -20,9 +25,9 @@
     <link href="{{ asset("assets/css/main.css") }}" rel="stylesheet">
     @stack('onPageCSS')
 
-    <link href="{{ asset("vendor/font-awesome/css/all.min.css") }}" rel="stylesheet">
     <script src="{{ asset("vendor/jquery/jquery.min.js") }}"></script>
     <script src="{{ asset("vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+	<script src="{{ asset("vendor/bootstrap-icons/bootstrap-icons.min.js") }}"></script>
     <script href="{{ asset("vendor/font-awesome/js/all.min.js") }}"></script>
     @stack('onPageJS')
 
