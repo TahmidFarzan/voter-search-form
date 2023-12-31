@@ -13,9 +13,9 @@
 
     <link href="{{ asset("fonts/nunito.css") }}" rel="stylesheet">
 	<link href="{{ asset("fonts/solaimanlipi.css") }}" rel="stylesheet">
-	
+
     <link href="{{ asset("vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
-	
+
 	<link href="{{ asset("vendor/font-awesome/css/all.min.css") }}" rel="stylesheet">
 	<link href="{{ asset("vendor/bootstrap-icons/bootstrap-icons.css") }}" rel="stylesheet">
 
@@ -27,7 +27,6 @@
 
     <script src="{{ asset("vendor/jquery/jquery.min.js") }}"></script>
     <script src="{{ asset("vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
-	<script src="{{ asset("vendor/bootstrap-icons/bootstrap-icons.min.js") }}"></script>
     <script href="{{ asset("vendor/font-awesome/js/all.min.js") }}"></script>
     @stack('onPageJS')
 
