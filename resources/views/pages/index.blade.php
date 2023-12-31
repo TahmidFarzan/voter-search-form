@@ -3,13 +3,13 @@
 @section('content')
     <div class="page-dynamic-section">
         <section id="hero" class="hero">
-            <img src="{{ asset('upload/hero-bg.jpg') }}" alt="" data-aos="fade-in">
+            <img src="{{ asset('upload/hero-bg.webp') }}">
 
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10">
-                        <h2 data-aos="fade-up" data-aos-delay="100">ভোটার তথ্য অনুসন্ধান</h2>
-                        <p data-aos="fade-up" data-aos-delay="200">বিস্তারিত তথ্য জানার জন্য ভোটার  আপনার আইডি নাম্বারের মাধ্যমে অনুসন্ধান করুন</p>
+                        <h2>ভোটার তথ্য অনুসন্ধান</h2>
+                        <p>বিস্তারিত তথ্য জানার জন্য ভোটার  আপনার আইডি নাম্বারের মাধ্যমে অনুসন্ধান করুন</p>
                     </div>
                     <div class="col-lg-5">
                         <div class="row height d-flex justify-content-center align-items-center">
@@ -84,7 +84,7 @@
         </section>
 
         <section id="about" class="about">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="container">
                 <div class="row align-items-xl-center gy-5">
                     <div class="col-xl-5 content">
                         <h2>এক নজরে মাগুরা-১ আসন</h2>
@@ -94,7 +94,7 @@
                     <div class="col-xl-7">
                         <div class="row gy-4 icon-boxes">
 
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6">
                                 <div class="icon-box">
                                     <i class="bi bi-people"></i>
                                     <h3>মোট ভোটার</h3>
@@ -102,7 +102,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6">
                                 <div class="icon-box">
                                     <i class="bi bi-gender-male"></i>
                                     <h3>পুরুষ ভোটার</h3>
@@ -110,7 +110,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6">
                                 <div class="icon-box">
                                     <i class="bi bi-gender-female"></i>
                                     <h3>নারী ভোটার</h3>
@@ -118,7 +118,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                            <div class="col-md-6">
                                 <div class="icon-box">
                                     <i class="bi bi-gender-trans"></i>
                                     <h3>হিজড়া ভোটার</h3>
@@ -133,74 +133,74 @@
 
         <section id="portfolio" class="portfolio">
 
-            <div class="container section-title" data-aos="fade-up">
+            <div class="container section-title">
                 <h2>ফটো গ্যালারী</h2>
                 <p>দ্বাদশ জাতীয় সংসদ নির্বাচনে বাংলাদেশ আওয়ামীলীগ মনোনীত প্রার্থী জনাব সাকিব আল হাসানকে নৌকা মার্কায় মাগুরা-১ আসনে সকল ভোটার ও সর্বস্তরের জনগণকে নৌকা মার্কায় ভোট দিয়ে জয়যুক্ত করুন।</p>
             </div>
 
             <div class="container">
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row gy-4 isotope-container">
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.jpg') }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-2.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-2.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-2.jpg') }}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-2.webp') }}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-3.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-3.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-3.jpg') }}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-3.webp') }}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.jpg') }}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.webp') }}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-5.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-5.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-5.jpg') }}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-5.webp') }}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-6.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-6.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-6.jpg') }}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-6.webp') }}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-7.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-7.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-7.jpg') }}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-7.webp') }}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-8.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-8.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-8.jpg') }}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-8.webp') }}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-9.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-9.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-9.jpg') }}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-9.webp') }}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
                     </div>
