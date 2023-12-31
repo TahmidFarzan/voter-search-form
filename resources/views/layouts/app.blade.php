@@ -36,7 +36,7 @@
 
                 <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto me-xl-0">
                     <h1>
-                        <img src="{{ asset("upload/hero-bg.webp") }}" class="img-fluid" alt="" width="71" height="40">
+                        <img src="{{ asset("upload/site-info/magura-1-logo.png") }}" class="img-fluid" alt="">
                     </h1>
                 </a>
 
