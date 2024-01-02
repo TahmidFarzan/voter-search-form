@@ -197,12 +197,6 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-9.webp') }}" class="img-fluid" alt="" loading="lazy">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-9.webp') }}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
