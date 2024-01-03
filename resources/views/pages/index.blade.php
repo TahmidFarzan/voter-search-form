@@ -16,9 +16,9 @@
                             <div class="col-md-12 mb-2">
                                 <div class="search">
                                     <i class="fa fa-search"></i>
-                                    <input type="text" class="form-control mb-2" id="nameInput" name="name" placeholder="নিজের নাম">
-                                    <input type="text" class="form-control mb-2" id="fatherNameInput" name="father_name" placeholder="পিতার নাম">
-                                    <input type="text" class="form-control mb-2" id="motherNameInput" name="mother_name" placeholder="মায়ের নাম">
+                                    <input type="text" class="form-control mb-2" id="nameInput" name="name" placeholder="ভোটারের নাম: (ভোটার আইডি কার্ডে যেভাবে লিখিত)">
+                                    <input type="text" class="form-control mb-2" id="fatherNameInput" name="father_name" placeholder="পিতার নাম: (ভোটার আইডি কার্ডে যেভাবে লিখিত)">
+                                    <input type="text" class="form-control mb-2" id="motherNameInput" name="mother_name" placeholder="মায়ের নাম: (ভোটার আইডি কার্ডে যেভাবে লিখিত)">
                                     <button type="button" class="btn btn-sm btn-success" id="searchVoterButton">
                                         <i class="fa-solid fa-magnifying-glass"></i> অনুসন্ধান
                                     </button>
@@ -160,13 +160,6 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" class="img-fluid" alt="" loading="lazy">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            </div>
-                        </div>
-
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                             <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-2.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
@@ -175,16 +168,16 @@
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.webp') }}" class="img-fluid" alt="" loading="lazy">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.webp') }}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" class="img-fluid" alt="" loading="lazy">
+                            <img src="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.webp') }}" class="img-fluid" alt="" loading="lazy">
                             <div class="portfolio-info">
-                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-1.webp') }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset('upload/masonry-portfolio/masonry-portfolio-4.webp') }}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div>
 
