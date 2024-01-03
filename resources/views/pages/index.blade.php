@@ -16,9 +16,9 @@
                             <div class="col-md-12 mb-2">
                                 <div class="search">
                                     <i class="fa fa-search"></i>
-                                    <input type="text" class="form-control" id="nameInput" name="name" placeholder="অনুসন্ধান: নিজের নাম">
-                                    <input type="text" class="form-control" id="fatherNameInput" name="father_name" placeholder="অনুসন্ধান: পিতার নাম">
-                                    <input type="text" class="form-control" id="motherNameInput" name="mother_name" placeholder="অনুসন্ধান: মায়ের নাম">
+                                    <input type="text" class="form-control mb-2" id="nameInput" name="name" placeholder="অনুসন্ধান: নিজের নাম">
+                                    <input type="text" class="form-control mb-2" id="fatherNameInput" name="father_name" placeholder="অনুসন্ধান: পিতার নাম">
+                                    <input type="text" class="form-control mb-2" id="motherNameInput" name="mother_name" placeholder="অনুসন্ধান: মায়ের নাম">
                                     <button type="button" class="btn btn-sm btn-success" id="searchVoterButton">
                                         <i class="fa-solid fa-magnifying-glass"></i> অনুসন্ধান
                                     </button>
