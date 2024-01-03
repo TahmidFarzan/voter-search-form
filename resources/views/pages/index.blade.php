@@ -16,72 +16,78 @@
                             <div class="col-md-12 mb-2">
                                 <div class="search">
                                     <i class="fa fa-search"></i>
-                                    <input type="text" class="form-control" id="searchInput" name="search" placeholder="অনুসন্ধান: ভোটার নং/জাতীয় পরিচয়পত্র নং">
+                                    <input type="text" class="form-control" id="nameInput" name="name" placeholder="অনুসন্ধান: নিজের নাম">
+                                    <input type="text" class="form-control" id="fatherNameInput" name="father_name" placeholder="অনুসন্ধান: পিতার নাম">
+                                    <input type="text" class="form-control" id="motherNameInput" name="mother_name" placeholder="অনুসন্ধান: মায়ের নাম">
                                     <button type="button" class="btn btn-sm btn-success" id="searchVoterButton">
                                         <i class="fa-solid fa-magnifying-glass"></i> অনুসন্ধান
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="col-md-12 @if(! ( $voterInfo) ) mb-2 d-none @endif" id="voterDataGrid">
+                            <div class="col-md-12 @if(! ( $voters) ) mb-2 d-none @endif" id="voterDataGrid">
                                 @include("utility.status messages")
 
                                 <div class="extra-erorr-message d-none"></div>
 
-                                @if ($voterInfo)
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ $voterInfo->name }}</h5>
-                                            <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার নং : {{ $voterInfo->voter_no }}</h6>
-                                            <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার স্লিপ: {{ $voterInfo->voter_slip }}</h6>
-                                            <ul class="list-group list-group-flush">
-
-                                                @if ($voterInfo->date_of_birth)
-                                                    <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voterInfo->date_of_birth }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->gender)
-                                                    <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voterInfo->gender }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->father_name)
-                                                    <li class="list-group-item"><b>পিতার নাম :</b> {{  $voterInfo->father_name }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->mother_name)
-                                                    <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voterInfo->mother_name }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->upazilla)
-                                                    <li class="list-group-item"><b>উপজেলা :</b> {{  $voterInfo->upazilla }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->union)
-                                                    <li class="list-group-item"><b>ইউনিয়ন :</b> {{ $voterInfo->union }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->profession)
-                                                    <li class="list-group-item"><b>পেশা :</b> {{ $voterInfo->profession }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->address)
-                                                    <li class="list-group-item"><b>ভোটার ঠিকানা :</b> {{ $voterInfo->address }}</li>
-                                                @endif
-
-                                                @if ($voterInfo->vote_center)
-                                                    <li class="list-group-item"><b>ভোট কেন্দ্র :</b> {{ $voterInfo->vote_center }}</li>
-                                                @endif
-                                            </ul>
+                                <div id="votersMainDataGrid">
+                                    @if ( !$voters )
+                                        <div class=" d-flex justify-content-center text-warning">
+                                            <p>এই ভোটার নম্বর ব্যবহার করে কোনো ভোটার খুঁজে পাওয়া যায়নি।</p>
                                         </div>
-                                    </div>
-                                @endif
+                                    @endif
 
-                                @if ( !$voterInfo )
-                                    <div class=" d-flex justify-content-center text-warning">
-                                        <p>এই ভোটার নম্বর ব্যবহার করে কোনো ভোটার খুঁজে পাওয়া যায়নি।</p>
-                                    </div>
-                                @endif
+                                    @if ($voters)
+                                        <div class="card">
+                                            @foreach ($voters as $voter)
+                                                <div class="card-body mb-2">
+                                                    <h5 class="card-title">{{ $voter->name }}</h5>
+                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার নং : {{ $voter->voter_no }}</h6>
+                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার স্লিপ: {{ $voter->voter_slip }}</h6>
+                                                    <ul class="list-group list-group-flush">
 
+                                                        @if ($voter->date_of_birth)
+                                                            <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voter->date_of_birth }}</li>
+                                                        @endif
+
+                                                        @if ($voter->gender)
+                                                            <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voter->gender }}</li>
+                                                        @endif
+
+                                                        @if ($voter->father_name)
+                                                            <li class="list-group-item"><b>পিতার নাম :</b> {{  $voter->father_name }}</li>
+                                                        @endif
+
+                                                        @if ($voter->mother_name)
+                                                            <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voter->mother_name }}</li>
+                                                        @endif
+
+                                                        @if ($voter->upazilla)
+                                                            <li class="list-group-item"><b>উপজেলা :</b> {{  $voter->upazilla }}</li>
+                                                        @endif
+
+                                                        @if ($voter->union)
+                                                            <li class="list-group-item"><b>ইউনিয়ন :</b> {{ $voter->union }}</li>
+                                                        @endif
+
+                                                        @if ($voter->profession)
+                                                            <li class="list-group-item"><b>পেশা :</b> {{ $voter->profession }}</li>
+                                                        @endif
+
+                                                        @if ($voter->address)
+                                                            <li class="list-group-item"><b>ভোটার ঠিকানা :</b> {{ $voter->address }}</li>
+                                                        @endif
+
+                                                        @if ($voter->vote_center)
+                                                            <li class="list-group-item"><b>ভোট কেন্দ্র :</b> {{ $voter->vote_center }}</li>
+                                                        @endif
+                                                    </ul>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -221,15 +227,18 @@
 @endpush
 
 @push("onPageJS")
+
     <script>
         $(document).ready(function () {
             $(document).on('click', ".page-dynamic-section #searchVoterButton", function () {
-                var search = $(".page-dynamic-section #searchInput").val();
-                if(search.length > 0){
+                var nameInput = $(".page-dynamic-section #nameInput").val();
+                var fatherNameInput = $(".page-dynamic-section #fatherNameInput").val();
+                var motherNameInput = $(".page-dynamic-section #motherNameInput").val();
+                if( (nameInput.length > 0) && (fatherNameInput.length > 0) & (motherNameInput.length > 0)){
                     dataTableLoad(parameterGenerate());
                 }
-                if(search.length == 0){
-                    extraErrorMessage("ভোটার নম্বর লিখুন|")
+                if( ! ((nameInput.length > 0) && (fatherNameInput.length > 0) & (motherNameInput.length > 0)) ){
+                    extraErrorMessage("নিজের নাম,পিতার নাম,মায়ের নাম লিখুন|")
                 }
             });
         });
@@ -237,7 +246,9 @@
         function parameterGenerate(){
             var parameterString = null;
             $.each( [
-                "searchInput",
+                "nameInput",
+                "fatherNameInput",
+                "motherNameInput",
             ], function( key, perInput ) {
                 if(($("#" + perInput).val().length > 0)){
                     var inputFieldValue = $("#" + perInput).val();
@@ -258,7 +269,7 @@
                     $(".page-dynamic-section .extra-erorr-message").html("");
 
                     $(".page-dynamic-section #voterDataGrid").removeClass('d-none');
-                    $(".page-dynamic-section #voterDataGrid").html($(result).find(".page-dynamic-section #voterDataGrid").html());
+                    $(".page-dynamic-section #voterDataGrid #votersMainDataGrid").html($(result).find(".page-dynamic-section #voterDataGrid #votersMainDataGrid").html());
                 },
                 error: function(errorResponse) {
                     extraErrorMessage(["Error " + errorResponse.status,errorResponse.statusText]);

@@ -10,14 +10,25 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
-        $voterInfo = null;
+        $voters = null;
 
         if( count($request->input())  > 0){
-            $voterInfo = Voter::orderBy('name','asc');
-            if($request->has("search") && !($request->search == null)){
-                $voterInfo =  $voterInfo->where("voter_no", $request->search)->first();
+            $voters = Voter::orderBy('name','asc');
+            if($request->has("name") && !($request->name == null)){
+                $voters =  $voters->where("name", 'like' , '%'.$request->name.'%');
             }
+
+            if($request->has("father_name") && !($request->father_name == null)){
+                $voters =  $voters->where("father_name", 'like' , '%'.$request->father_name.'%');
+            }
+
+            if($request->has("mother_name") && !($request->father_name == null)){
+                $voters =  $voters->where("mother_name", 'like' , '%'.$request->mother_name.'%');
+            }
+
+            $voters =  $voters->get();
         }
-        return view('pages.index',compact('voterInfo'));
+
+        return view('pages.index',compact('voters'));
     }
 }
