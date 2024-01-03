@@ -23,6 +23,7 @@ class VoterListImport implements ToModel, WithHeadingRow
             'profession' => $row["profession"],
             'address' => $row["address"],
             'vote_center' => $row["vote_center"],
+            'voter_slip' => $row['voter_slip'],
         ]);
     }
 }

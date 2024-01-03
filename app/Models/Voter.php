@@ -12,6 +12,7 @@ class Voter extends Model
     protected $table = 'voters';
 
     protected $fillable = [
+        'voter_slip',
         'voter_no',
         'name',
         'upazilla',

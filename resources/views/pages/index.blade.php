@@ -32,7 +32,8 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $voterInfo->name }}</h5>
-                                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ $voterInfo->no }}</h6>
+                                            <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার নং : {{ $voterInfo->voter_no }}</h6>
+                                            <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার স্লিপ: {{ $voterInfo->voter_slip }}</h6>
                                             <ul class="list-group list-group-flush">
 
                                                 @if ($voterInfo->date_of_birth)
@@ -64,7 +65,7 @@
                                                 @endif
 
                                                 @if ($voterInfo->address)
-                                                    <li class="list-group-item"><b>ঠিকানা :</b> {{ $voterInfo->address }}</li>
+                                                    <li class="list-group-item"><b>ভোটার ঠিকানা :</b> {{ $voterInfo->address }}</li>
                                                 @endif
 
                                                 @if ($voterInfo->vote_center)

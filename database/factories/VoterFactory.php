@@ -10,7 +10,8 @@ class VoterFactory extends Factory
     public function definition(): array
     {
         return [
-            'no' => Str::uuid(),
+            'voter_no' => Str::uuid(),
+            'voter_slip' => Str::uuid(),
             'name' => fake()->name(),
             'upazilla' => null,
             'union' => null,

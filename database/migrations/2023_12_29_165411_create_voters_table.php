@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('voters', function (Blueprint $table) {
             $table->id();
+            $table->string('voter_slip', 255)->nullable();
             $table->string('voter_no', 255)->nullable();
             $table->string('name',255)->nullable()->default(null);
             $table->string('upazilla',255)->nullable()->default(null);
