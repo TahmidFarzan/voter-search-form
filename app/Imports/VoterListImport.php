@@ -13,7 +13,7 @@ class VoterListImport implements ToModel, WithHeadingRow
         return new Voter([
             'updated_at' => null,
             'created_at' => now(),
-            'no' => $row['voter_no'],
+            'voter_no' => $row['voter_no'],
             'name' => $row['name'],
             'upazilla' => $row['upazilla'],
             'union' => $row['union'],
@@ -22,6 +22,7 @@ class VoterListImport implements ToModel, WithHeadingRow
             'date_of_birth' => $row["date_of_birth"],
             'profession' => $row["profession"],
             'address' => $row["address"],
+            'vote_center' => $row["vote_center"],
         ]);
     }
 }

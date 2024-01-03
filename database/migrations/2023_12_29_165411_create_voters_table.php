@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('voters', function (Blueprint $table) {
             $table->id();
-            $table->string('no', 255)->nullable();
+            $table->string('voter_no', 255)->nullable();
             $table->string('name',255)->nullable()->default(null);
             $table->string('upazilla',255)->nullable()->default(null);
             $table->string('union',255)->nullable()->default(null);
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('profession',255)->nullable()->default(null);
             $table->text('address')->nullable()->default(null);
             $table->text('gender')->nullable()->default(null);
+            $table->text('vote_center')->nullable()->default(null);
             $table->timestamps();
         });
     }

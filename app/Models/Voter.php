@@ -12,7 +12,7 @@ class Voter extends Model
     protected $table = 'voters';
 
     protected $fillable = [
-        'no',
+        'voter_no',
         'name',
         'upazilla',
         'union',
@@ -22,6 +22,7 @@ class Voter extends Model
         'profession',
         'address',
         'gender',
+        'vote_center'
     ];
 
     protected $hidden = [];

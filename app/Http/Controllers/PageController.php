@@ -15,7 +15,7 @@ class PageController extends Controller
         if( count($request->input())  > 0){
             $voterInfo = Voter::orderBy('name','asc');
             if($request->has("search") && !($request->search == null)){
-                $voterInfo =  $voterInfo->where("no", $request->search)->first();
+                $voterInfo =  $voterInfo->where("voter_no", $request->search)->first();
             }
         }
         return view('pages.index',compact('voterInfo'));

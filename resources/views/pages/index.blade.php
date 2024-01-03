@@ -16,7 +16,7 @@
                             <div class="col-md-12 mb-2">
                                 <div class="search">
                                     <i class="fa fa-search"></i>
-                                    <input type="text" class="form-control" id="searchInput" name="search" placeholder="অনুসন্ধান: ভোটার নং">
+                                    <input type="text" class="form-control" id="searchInput" name="search" placeholder="অনুসন্ধান: ভোটার নং/জাতীয় পরিচয়পত্র নং">
                                     <button type="button" class="btn btn-sm btn-success" id="searchVoterButton">
                                         <i class="fa-solid fa-magnifying-glass"></i> অনুসন্ধান
                                     </button>
@@ -34,6 +34,7 @@
                                             <h5 class="card-title">{{ $voterInfo->name }}</h5>
                                             <h6 class="card-subtitle mb-2 text-body-secondary">{{ $voterInfo->no }}</h6>
                                             <ul class="list-group list-group-flush">
+
                                                 @if ($voterInfo->date_of_birth)
                                                     <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voterInfo->date_of_birth }}</li>
                                                 @endif
@@ -64,6 +65,10 @@
 
                                                 @if ($voterInfo->address)
                                                     <li class="list-group-item"><b>ঠিকানা :</b> {{ $voterInfo->address }}</li>
+                                                @endif
+
+                                                @if ($voterInfo->vote_center)
+                                                    <li class="list-group-item"><b>ভোট কেন্দ্র :</b> {{ $voterInfo->vote_center }}</li>
                                                 @endif
                                             </ul>
                                         </div>
