@@ -22,10 +22,6 @@ class PageController extends Controller
                 $voters =  $voters->where("father_name", 'like' , '%'.$request->father_name.'%');
             }
 
-            if($request->has("mother_name") && !($request->father_name == null)){
-                $voters =  $voters->where("mother_name", 'like' , '%'.$request->mother_name.'%');
-            }
-
             $voters =  $voters->get();
         }
 

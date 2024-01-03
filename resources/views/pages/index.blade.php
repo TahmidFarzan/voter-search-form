@@ -18,7 +18,6 @@
                                     <i class="fa fa-search"></i>
                                     <input type="text" class="form-control mb-2" id="nameInput" name="name" placeholder="ভোটারের নাম: (ভোটার আইডি কার্ডে যেভাবে লিখিত)">
                                     <input type="text" class="form-control mb-2" id="fatherNameInput" name="father_name" placeholder="পিতার নাম: (ভোটার আইডি কার্ডে যেভাবে লিখিত)">
-                                    <input type="text" class="form-control mb-2" id="motherNameInput" name="mother_name" placeholder="মায়ের নাম: (ভোটার আইডি কার্ডে যেভাবে লিখিত)">
                                     <button type="button" class="btn btn-sm btn-success" id="searchVoterButton">
                                         <i class="fa-solid fa-magnifying-glass"></i> অনুসন্ধান
                                     </button>
@@ -75,7 +74,7 @@
                                                         @endif
 
                                                         @if ($voter->address)
-                                                            <li class="list-group-item"><b>ভোটার ঠিকানা :</b> {{ $voter->address }}</li>
+                                                            <li class="list-group-item"><b>ভোটারের এলাকা :</b> {{ $voter->address }}</li>
                                                         @endif
 
                                                         @if ($voter->vote_center)
@@ -233,12 +232,11 @@
             $(document).on('click', ".page-dynamic-section #searchVoterButton", function () {
                 var nameInput = $(".page-dynamic-section #nameInput").val();
                 var fatherNameInput = $(".page-dynamic-section #fatherNameInput").val();
-                var motherNameInput = $(".page-dynamic-section #motherNameInput").val();
-                if( (nameInput.length > 0) && (fatherNameInput.length > 0) & (motherNameInput.length > 0)){
+                if( (nameInput.length > 0) && (fatherNameInput.length > 0)){
                     dataTableLoad(parameterGenerate());
                 }
-                if( ! ((nameInput.length > 0) && (fatherNameInput.length > 0) & (motherNameInput.length > 0)) ){
-                    extraErrorMessage("নিজের নাম,পিতার নাম,মায়ের নাম লিখুন|")
+                if( ! ( (nameInput.length > 0) && (fatherNameInput.length > 0) ) ){
+                    extraErrorMessage("নিজের নাম,পিতার নাম লিখুন|")
                 }
             });
         });
@@ -248,7 +246,6 @@
             $.each( [
                 "nameInput",
                 "fatherNameInput",
-                "motherNameInput",
             ], function( key, perInput ) {
                 if(($("#" + perInput).val().length > 0)){
                     var inputFieldValue = $("#" + perInput).val();

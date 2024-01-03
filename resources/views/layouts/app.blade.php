@@ -119,7 +119,7 @@
             <div class="container copyright text-center mt-4">
                 <p>&copy; <span>Copyright</span> <strong class="px-1">Magura-1</strong> <span>All Rights Reserved</span></p>
                 <div class="credits">
-                    Designed by <a href="https://www.live2web.studio/">LIVE2WEB</a>
+                    Designed by <a href="https://www.live2web.studio/">LIVE2WEB R&D</a>
                 </div>
             </div>
 
