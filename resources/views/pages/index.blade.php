@@ -11,9 +11,9 @@
                         <h2>ভোটার তথ্য অনুসন্ধান</h2>
                         <p>নিচের তথ্য দিয়ে আপনার ভোটার নং ও ভোটার স্লিপ নং যাচাই করুন</p>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="row height d-flex justify-content-center align-items-center">
-                            <div class="col-md-12 mb-2">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
                                 <div class="search">
                                     <i class="fa fa-search"></i>
                                     <input type="text" class="form-control mb-2" id="nameInput" name="name" placeholder="ভোটারের নাম: (ভোটার আইডি কার্ডে যেভাবে লিখিত)">
@@ -24,7 +24,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12 @if(! ( $voters) ) mb-2 d-none @endif" id="voterDataGrid">
+                            <div class="col-md-6 @if(! ( $voters) ) mb-2 d-none @endif" id="voterDataGrid">
                                 @include("utility.status messages")
 
                                 <div class="extra-erorr-message d-none"></div>
@@ -246,6 +246,8 @@
                 type: "get",
                 url: "{{ route('home') }}" + "?" + parameterString,
                 success: function(result) {
+                    // console.log(result.length);
+                    console.log($(result).find(".page-dynamic-section #voterDataGrid #votersMainDataGrid").html());
                     $(".page-dynamic-section .extra-erorr-message").addClass('d-none');
                     $(".page-dynamic-section .extra-erorr-message").html("");
 

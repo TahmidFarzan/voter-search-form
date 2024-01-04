@@ -15,11 +15,11 @@ class PageController extends Controller
         if( count($request->input())  > 0){
             $voters = Voter::orderBy('name','asc');
             if($request->has("name") && !($request->name == null)){
-                $voters =  $voters->where("name", 'like' , '%'.$request->name.'%');
+                $voters =  $voters->where("name",$request->name);
             }
 
             if($request->has("father_name") && !($request->father_name == null)){
-                $voters =  $voters->where("father_name", 'like' , '%'.$request->father_name.'%');
+                $voters =  $voters->where("father_name", $request->father_name);
             }
 
             $voters =  $voters->get();
