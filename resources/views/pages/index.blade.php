@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-lg-10">
                         <h2>ভোটার তথ্য অনুসন্ধান</h2>
-                        <p>বিস্তারিত তথ্য জানার জন্য ভোটার  আপনার আইডি নাম্বারের মাধ্যমে অনুসন্ধান করুন</p>
+                        <p>নিচের তথ্য দিয়ে আপনার ভোটার নং ও ভোটার স্লিপ নং যাচাই করুন</p>
                     </div>
                     <div class="col-lg-5">
                         <div class="row height d-flex justify-content-center align-items-center">
@@ -41,45 +41,29 @@
                                             @foreach ($voters as $voter)
                                                 <div class="card-body mb-2">
                                                     <h5 class="card-title">{{ $voter->name }}</h5>
-                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার নং : {{ $voter->voter_no }}</h6>
-                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার স্লিপ: {{ $voter->voter_slip }}</h6>
+                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার নং : {{ $voter->voter_no ?? "অজানা" }}</h6>
+                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার স্লিপ: {{ $voter->voter_slip ?? "অজানা" }}</h6>
                                                     <ul class="list-group list-group-flush">
 
-                                                        @if ($voter->date_of_birth)
-                                                            <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voter->date_of_birth }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voter->date_of_birth ?? "অজানা" }}</li>
 
                                                         @if ($voter->gender)
-                                                            <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voter->gender }}</li>
+                                                            <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voter->gender ?? "অজানা" }}</li>
                                                         @endif
 
-                                                        @if ($voter->father_name)
-                                                            <li class="list-group-item"><b>পিতার নাম :</b> {{  $voter->father_name }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>পিতার নাম :</b> {{  $voter->father_name ?? "অজানা" }}</li>
 
-                                                        @if ($voter->mother_name)
-                                                            <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voter->mother_name }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voter->mother_name?? "অজানা" }}</li>
 
-                                                        @if ($voter->upazilla)
-                                                            <li class="list-group-item"><b>উপজেলা :</b> {{  $voter->upazilla }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>উপজেলা/থানা :</b> {{  $voter->upazilla }}</li>
 
-                                                        @if ($voter->union)
-                                                            <li class="list-group-item"><b>ইউনিয়ন :</b> {{ $voter->union }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>ইউনিয়ন/ওয়ার্ড/ক্যাঃ বোঃ :</b> {{ $voter->union }}</li>
 
-                                                        @if ($voter->profession)
-                                                            <li class="list-group-item"><b>পেশা :</b> {{ $voter->profession }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>পেশা :</b> {{ $voter->profession?? "অজানা" }}</li>
 
-                                                        @if ($voter->address)
-                                                            <li class="list-group-item"><b>ভোটারের এলাকা :</b> {{ $voter->address }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>ভোটারের এলাকা :</b> {{ $voter->address?? "অজানা" }}</li>
 
-                                                        @if ($voter->vote_center)
-                                                            <li class="list-group-item"><b>ভোট কেন্দ্র :</b> {{ $voter->vote_center }}</li>
-                                                        @endif
+                                                        <li class="list-group-item"><b>ভোট কেন্দ্র :</b> {{ $voter->vote_center ?? "অজানা" }}</li>
                                                     </ul>
                                                 </div>
                                             @endforeach
