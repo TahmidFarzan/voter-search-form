@@ -41,29 +41,29 @@
                                             @foreach ($voters as $voter)
                                                 <div class="card-body mb-2">
                                                     <h5 class="card-title">{{ $voter->name }}</h5>
-                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার নং : {{ $voter->voter_no ?? "অজানা" }}</h6>
-                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার স্লিপ: {{ $voter->voter_slip ?? "অজানা" }}</h6>
+                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার নং : {{ $voter->voter_no ?? "খুঁজে পাওয়া যায়নি" }}</h6>
+                                                    <h6 class="card-subtitle mb-2 text-body-secondary">ভোটার স্লিপ: {{ $voter->voter_slip ?? "খুঁজে পাওয়া যায়নি" }}</h6>
                                                     <ul class="list-group list-group-flush">
 
-                                                        <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voter->date_of_birth ?? "অজানা" }}</li>
+                                                        <li class="list-group-item"><b>জন্ম তারিখ :</b> {{ $voter->date_of_birth ?? "খুঁজে পাওয়া যায়নি" }}</li>
 
                                                         @if ($voter->gender)
-                                                            <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voter->gender ?? "অজানা" }}</li>
+                                                            <li class="list-group-item"><b>লিঙ্গ :</b> {{  $voter->gender ?? "খুঁজে পাওয়া যায়নি" }}</li>
                                                         @endif
 
-                                                        <li class="list-group-item"><b>পিতার নাম :</b> {{  $voter->father_name ?? "অজানা" }}</li>
+                                                        <li class="list-group-item"><b>পিতার নাম :</b> {{  $voter->father_name ?? "খুঁজে পাওয়া যায়নি" }}</li>
 
-                                                        <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voter->mother_name?? "অজানা" }}</li>
+                                                        <li class="list-group-item"><b>মায়ের নাম :</b> {{  $voter->mother_name?? "খুঁজে পাওয়া যায়নি" }}</li>
 
-                                                        <li class="list-group-item"><b>উপজেলা/থানা :</b> {{  $voter->upazilla }}</li>
+                                                        {{-- <li class="list-group-item"><b>উপজেলা/থানা :</b> {{  $voter->upazilla }}</li> --}}
 
-                                                        <li class="list-group-item"><b>ইউনিয়ন/ওয়ার্ড/ক্যাঃ বোঃ :</b> {{ $voter->union }}</li>
+                                                        {{-- <li class="list-group-item"><b>ইউনিয়ন/ওয়ার্ড/ক্যাঃ বোঃ :</b> {{ $voter->union }}</li> --}}
 
-                                                        <li class="list-group-item"><b>পেশা :</b> {{ $voter->profession?? "অজানা" }}</li>
+                                                        <li class="list-group-item"><b>পেশা :</b> {{ $voter->profession?? "খুঁজে পাওয়া যায়নি" }}</li>
 
-                                                        <li class="list-group-item"><b>ভোটারের এলাকা :</b> {{ $voter->address?? "অজানা" }}</li>
+                                                        <li class="list-group-item"><b>ভোটারের এলাকা :</b> {{ $voter->address?? "খুঁজে পাওয়া যায়নি" }}</li>
 
-                                                        <li class="list-group-item"><b>ভোট কেন্দ্র :</b> {{ $voter->vote_center ?? "অজানা" }}</li>
+                                                        <li class="list-group-item"><b>ভোট কেন্দ্র :</b> {{ $voter->vote_center ?? "খুঁজে পাওয়া যায়নি" }}</li>
                                                     </ul>
                                                 </div>
                                             @endforeach
